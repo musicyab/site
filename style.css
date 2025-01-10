@@ -1,0 +1,599 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #252422;
+}
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+/* استایل کلی منو */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 24px;
+}
+
+.navbar .menu {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+
+.navbar .menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar .search-container input {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* نمایش منو به صورت عمودی در صفحه‌های کوچک‌تر */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none; /* مخفی کردن منو در ابتدا */
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    background-color: #333;
+    padding: 10px 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 5;
+  }
+
+  .navbar .menu li a {
+    padding: 10px;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block; /* نمایش آیکون همبرگر */
+  }
+
+  .navbar.active .menu {
+    display: flex; /* نمایش منو هنگام فعال بودن */
+  }
+
+  .navbar.active .menu-toggle {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+/* اسلایدر */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1000px; /* حداکثر عرض اسلایدر 1000 پیکسل */
+  margin: 0 auto; /* برای وسط‌چین کردن اسلایدر */
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* تنظیمات تصاویر داخل اسلایدر */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+}
+
+/* فلش‌های کنترل */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+
+/* استایل کلی برای بنرها */
+.advertisements {
+  display: flex;
+  flex-direction: column; /* هر بنر در یک خط جداگانه نمایش داده می‌شود */
+  justify-content: center; /* وسط‌چین کردن بنرها به صورت افقی */
+  align-items: center; /* وسط‌چین کردن بنرها به صورت عمودی */
+  gap: 10px; /* فاصله بین بنرها */
+  margin-top: 20px; /* فاصله از سایر بخش‌ها */
+
+}
+
+/* هر بنر تبلیغاتی */
+.banner {
+  width: 100%; /* هر بنر به اندازه 100% عرض صفحه نمایش داده می‌شود */
+  max-width: 1000px; /* حداکثر عرض هر بنر */
+  box-sizing: border-box; /* اضافه کردن padding و border به کل ابعاد */
+}
+
+/* تصاویر داخل بنرها */
+.banner img {
+  width: 100%; /* عرض تصویر به اندازه 100% از فضای بنر */
+  height: auto; /* ارتفاع تصویر به صورت خودکار تنظیم می‌شود تا نسبت ابعاد حفظ شود */
+  object-fit: cover; /* تصویر به طور مناسب در ابعاد بنر جای می‌گیرد */
+}
+
+/* استایل برای نمایش در موبایل‌ها */
+@media (max-width: 768px) {
+  .advertisements {
+    justify-content: center; /* در موبایل‌ها بنرها وسط‌چین خواهند شد */
+  }
+}
+
+
+.track {
+  width: calc(16.66% - 20px); /* 6 تصویر در هر خط با فاصله 20px */
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  background-color: #ddd;
+  text-align: center;
+}
+
+.track img {
+  width: 100%;
+  object-fit: cover;
+  
+}
+
+.track a, .podcast a{
+  display: block; /* کل دیو قابل کلیک می‌شود */
+  text-decoration: none; /* از حذف خط زیر لینک */
+  color: inherit; /* رنگ متن را از والد بگیرد */
+}
+
+.track-info {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.295);
+  color: #fff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: background-color 0.3s ease; /* تغییر رنگ پس‌زمینه هنگام هاور */
+
+}
+
+.track-info p, .podcast p {
+  margin: 5px 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+.artist-name,
+.track-name {
+  margin: 5px 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* برای موبایل‌ها */
+@media (max-width: 768px) {
+  .track {
+    width: 48%; /* در موبایل‌ها 2 تصویر در یک خط */
+  }
+}
+
+@media (max-width: 480px) {
+  .track {
+    width: 100%; /* در صفحه‌های خیلی کوچک، هر تصویر در یک خط */
+  }
+}
+
+
+.special-tracks, .new-tracks, .playlists {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.track, .playlist, .podcast {
+  background-color: #505050;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.track:hover, .playlist:hover, .podcast:hover {
+  background-color: #757575;
+}
+.track:hover img, .playlist:hover img, .podcast:hover img {
+  
+  transform: scale(1.1); /* افکت زوم */
+
+}
+
+/* استایل کلی برای عنوان‌ها */
+h2 {
+  text-align: center; /* مرکز‌چین کردن عنوان‌ها */
+  margin-top: 30px; /* فاصله از بالا */
+  margin-bottom: 20px; /* فاصله از پایین */
+  font-size: 1.5rem; /* اندازه متن عنوان */
+  font-weight: bold; /* ضخیم شدن عنوان */
+  width: 100%; /* عرض کامل برای تایتل */
+  display: block; /* برای اینکه در یک خط جداگانه نمایش داده شود */
+}
+
+/* استایل مخصوص برای عنوان‌ها داخل بخش‌های خاص */
+section h2 {
+  margin-top: 40px; /* فاصله از بالا داخل بخش */
+  margin-bottom: 20px; /* فاصله از پایین داخل بخش */
+  font-size: 24px; /* اندازه متن برای بخش‌های خاص */
+  color: #ccc;
+}
+
+/* تنظیمات والد برای مرکز چین کردن */
+section {
+  display: flex;
+  justify-content: center; /* مرکز‌چین افقی */
+  flex-wrap: wrap; /* باکس‌ها در صورت نیاز به خط بعدی بروند */
+  gap: 20px; /* فاصله بین باکس‌ها */
+  width: 100%; /* عرض کل صفحه */
+  margin: 0 auto; /* خودکار بودن حاشیه‌ها برای مرکز چین کردن */
+  box-sizing: border-box;
+  text-align: center; /* برای مرکز چین کردن محتوای داخلی */
+}
+
+/* تنظیمات برای باکس‌های داخل (ترک‌ها و پادکست‌ها) */
+.track, .podcast, .tracks-new .track {
+  width: calc(16.66% - 20px); /* 6 تصویر در هر خط با فاصله 20px */
+  box-sizing: border-box;
+  overflow: hidden; /* جلوگیری از بیرون زدن تصویر */
+  position: relative;
+  border-radius: 8px; /* گوشه‌های گرد برای باکس */
+}
+
+.track img, .podcast img {
+  width: 100%;
+  object-fit: cover; /* پر کردن باکس با تصویر */
+  transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+
+
+/* برای موبایل‌ها */
+@media (max-width: 768px) {
+  .track, .podcast, .tracks-new .track  {
+    width: 48%; /* در موبایل‌ها 2 تصویر در یک خط */
+  }
+}
+
+@media (max-width: 480px) {
+  .track, .podcast, .tracks-new .track  {
+    width: 100%; /* در صفحه‌های خیلی کوچک، هر تصویر در یک خط */
+  }
+}
+
+/* تنظیمات کلی فوتر */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* برای نمایش انعطاف‌پذیر */
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.footer-links,
+.footer-social,
+.footer-hashtags {
+  flex: 1 1 30%; /* سه بخش با عرض مساوی در دسکتاپ */
+  margin: 10px;
+  text-align: center;
+}
+
+.footer-links h3,
+.footer-social h3,
+.footer-hashtags h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-hashtags .hashtags span {
+  display: inline-block;
+  background-color: #444;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* تبدیل فوتر به حالت ستونی */
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-social,
+  .footer-hashtags {
+    flex: 1 1 100%; /* هر بخش 100% عرض */
+  }
+
+  .footer-links ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links h3,
+  .footer-social h3,
+  .footer-hashtags h3 {
+    font-size: 16px; /* کوچک‌تر شدن عناوین */
+  }
+
+  .footer-links ul li a {
+    font-size: 14px; /* کوچک‌تر شدن لینک‌ها */
+  }
+
+  .footer-hashtags .hashtags span {
+    font-size: 12px; /* کوچک‌تر شدن هشتگ‌ها */
+  }
+
+  .footer-bottom {
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+.footer-social .social-icons {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.social-icon img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}
+
+.footer-social .social-icons {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.social-icon i {
+  font-size: 30px;
+  color: #fff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover i {
+  transform: scale(1.1); /* افکت زوم */
+  color: #f0f0f0; /* تغییر رنگ هنگام هاور */
+}
+/* تنظیمات کلی فونت‌ها */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; /* اندازه فونت اصلی */
+  color: #333; /* رنگ متن */
+  line-height: 1.5; /* فاصله بین خطوط */
+}
+
+/* فونت‌های عناوین */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; /* وزن بولد برای عناوین */
+  color: #333; /* رنگ عناوین */
+}
+
+/* تنظیمات خاص برای عنوان‌های اصلی */
+h1 {
+  font-size: 3rem; /* اندازه فونت برای h1 */
+  letter-spacing: -1px; /* فاصله بین حروف */
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.5rem; /* اندازه فونت برای h2 */
+  letter-spacing: -0.5px;
+  margin-bottom: 15px;
+}
+
+/* تنظیمات برای پاراگراف‌ها */
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* تنظیمات برای لینک‌ها */
+a {
+  color: #48cae4; /* رنگ آبی برای لینک‌ها */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #333; /* تغییر رنگ لینک‌ها هنگام هاور */
+}
+
+/* تنظیمات برای سربرگ‌ها در فوتر */
+.footer-links h3,
+.footer-social h3,
+.footer-hashtags h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* استایل برای آیکون‌ها */
+.social-icon i {
+  font-size: 30px;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.social-icon:hover i {
+  color: #48cae4; /* تغییر رنگ آیکون‌ها هنگام هاور */
+}
+
+/* استایل برای فوتر */
+.footer-container {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* تنظیمات ریسپانسیو */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+.footer-container {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-links h3,
+.footer-social h3,
+.footer-hashtags h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}

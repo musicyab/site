@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- لینک CDN FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- منو بالا -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Your Logo</div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Featured Tracks</a></li>
+        <li><a href="#">New Tracks</a></li>
+        <li><a href="#">Playlists</a></li>
+      </ul>
+      <div class="search-container">
+        <input type="text" placeholder="Search ..." />
+      </div>
+      <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    </nav>
+  </header>
+<!-- اسلایدر -->
+<section class="slider">
+  <div class="slides">
+    <div class="slide">
+      <a href="link1.html"><img src="slider-image1.jpg" alt="اسلایدر 1"></a>
+    </div>
+    <div class="slide">
+      <a href="link2.html"><img src="slider-image2.jpg" alt="اسلایدر 2"></a>
+    </div>
+    <div class="slide">
+      <a href="link3.html"><img src="slider-image3.jpg" alt="اسلایدر 3"></a>
+    </div>
+  </div>
+
+  <!-- فلش‌های کنترل -->
+  <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
+  <span class="next" onclick="moveSlide(1)">&#10095;</span>
+</section>
+
+
+  <!-- بنرهای تبلیغاتی -->
+<section class="advertisements">
+  <div class="banner">
+    <a href="link1.html"><img src="banner1.jpg" alt="بنر تبلیغاتی 1"></a>
+  </div>
+  <div class="banner">
+    <a href="link2.html"><img src="banner2.jpg" alt="بنر تبلیغاتی 2"></a>
+  </div>
+  <div class="banner">
+    <a href="link3.html"><img src="banner3.jpg" alt="بنر تبلیغاتی 3"></a>
+  </div>
+</section>
+
+
+<section class="tracks-special">
+  <h2>Featured Tracks</h2>
+  <div class="track">
+    <a href="track1.html"><img src="track1.jpg" alt="ترک جدید 1">
+    <div class="track-info">
+      <p class="artist-name">Artist Name 1</p>
+      <p class="track-name">Track Name 1</p>
+    </div>
+  </a>
+  </div>
+  <div class="track">
+    <a href="track2.html"><img src="track2.jpg" alt="ترک جدید 1">
+    <div class="track-info">
+      <p class="artist-name">Artist Name 1</p>
+      <p class="track-name">Track Name 1</p>
+    </div>
+  </a>
+  </div>
+  <div class="track">
+    <a href="track3.html"><img src="track3.jpg" alt="ترک جدید 1">
+    <div class="track-info">
+      <p class="artist-name">Artist Name 1</p>
+      <p class="track-name">Track Name 1</p>
+    </div>
+  </a>
+  </div>
+  <div class="track">
+    <a href="track4.html"><img src="track4.jpg" alt="ترک جدید 1">
+    <div class="track-info">
+      <p class="artist-name">Artist Name 1</p>
+      <p class="track-name">Track Name 1</p>
+    </div>
+  </a>
+  </div>
+  <div class="track">
+    <a href="track5.html"><img src="track5.jpg" alt="ترک جدید 1">
+    <div class="track-info">
+      <p class="artist-name">Artist Name 1</p>
+      <p class="track-name">Track Name 1</p>
+    </div>
+  </a>
+  </div>
+  <div class="track">
+    <a href="track6.html"><img src="track6.jpg" alt="ترک جدید 1">
+    <div class="track-info">
+      <p class="artist-name">Artist Name 1</p>
+      <p class="track-name">Track Name 1</p>
+    </div>
+  </a>
+  </div>
+</section>
+
+<section class="tracks-new">
+  <h2>New Tracks</h2>
+    <div class="track">
+      <a href="track1.html"><img src="track1.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track2.html"><img src="track2.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track3.html"><img src="track3.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track4.html"><img src="track4.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track5.html"><img src="track5.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track6.html"><img src="track6.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track7.html"><img src="track7.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track8.html"><img src="track8.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track9.html"><img src="track9.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track10.html"><img src="track10.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track11.html"><img src="track11.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <div class="track">
+      <a href="track12.html"><img src="track12.jpg" alt="ترک جدید 1">
+      <div class="track-info">
+        <p class="artist-name">Artist Name 1</p>
+        <p class="track-name">Track Name 1</p>
+      </div>
+    </a>
+    </div>
+    <!-- تکرار برای سایر ترک‌ها -->
+  </section>
+  
+<section class="podcasts">
+  <h2>Playlists</h2>
+  <div class="podcast">
+    <a href="podcast1.html"><img src="podcast1.jpg"  alt="پادکست 1">
+    <div class="track-info">
+      <p class="artist-name">Podcast 1</p>
+      <p class="track-name">Mood</p>
+    </div>
+  </a>
+  </div>
+  <div class="podcast">
+    <a href="podcast2.html"><img src="podcast2.jpg"  alt="پادکست 1">
+    <div class="track-info">
+      <p class="artist-name">Podcast 1</p>
+      <p class="track-name">Mood</p>
+    </div>
+  </a>
+  </div>
+  <div class="podcast">
+    <a href="podcast3.jpg"><img src="podcast3.jpg"  alt="پادکست 1">
+    <div class="track-info">
+      <p class="artist-name">Podcast 1</p>
+      <p class="track-name">Mood</p>
+    </div>
+  </a>
+  </div>
+  <div class="podcast">
+    <a href="podcast4.html"><img src="podcast4.jpg"  alt="پادکست 1">
+    <div class="track-info">
+      <p class="artist-name">Podcast 1</p>
+      <p class="track-name">Mood</p>
+    </div>
+  </a>
+  </div>
+  <div class="podcast">
+    <a href="podcast5.html"><img src="podcast5.jpg"  alt="پادکست 1">
+    <div class="track-info">
+      <p class="artist-name">Podcast 1</p>
+      <p class="track-name">Mood</p>
+    </div>
+  </a>
+  </div>
+  <div class="podcast">
+    <a href="podcast6.html"><img src="podcast6.jpg"  alt="پادکست 1">
+    <div class="track-info">
+      <p class="artist-name">Podcast 1</p>
+      <p class="track-name">Mood</p>
+    </div>
+  </a>
+  </div>
+</section>
+
+
+  <script src="slider.js"></script>
+</body>
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tracks</a></li>
+        <li><a href="#">Playlists</a></li>
+        <li><a href="#">Podcasts</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons" id="social-icons-container"></div>
+    </div>
+
+    <div class="footer-hashtags">
+      <h3>Trending Hashtags</h3>
+      <div class="hashtags">
+        <span>#Music</span>
+        <span>#Tracks</span>
+        <span>#Playlists</span>
+        <span>#NewReleases</span>
+        <span>#Artists</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 YourWebsite. All rights reserved.</p>
+  </div>
+</footer>
+
+</html>
